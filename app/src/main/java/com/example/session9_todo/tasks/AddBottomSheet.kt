@@ -1,5 +1,6 @@
 package com.example.session9_todo.tasks
 
+import android.annotation.SuppressLint
 import android.app.DatePickerDialog
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -43,11 +44,6 @@ class AddBottomSheet :BottomSheetDialogFragment() {
     private fun init() {
         callBack()
 
-                chooseDate.setText(
-            " "+calendar.get(Calendar.DAY_OF_MONTH)
-                    + " / "+calendar.get((Calendar.MONTH+1))
-                    +" / " +calendar.get(Calendar.YEAR)
-        )
         // create DatePicker in chooseDate field
         chooseDate.setOnClickListener{
             //showDatePicker()
@@ -84,6 +80,7 @@ class AddBottomSheet :BottomSheetDialogFragment() {
             //2 object of DatePickerDialog.OnDateSetListener
             object : DatePickerDialog.OnDateSetListener{
                 // override fun onDateSet with (year month day)
+                @SuppressLint("SetTextI18n")
                 override fun onDateSet(p0: DatePicker?, year: Int, month: Int, day: Int) {
                     // calendar now has year month
                     calendar.set(Calendar.DAY_OF_MONTH,day)

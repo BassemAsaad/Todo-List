@@ -6,7 +6,6 @@ import androidx.room.Insert
 import androidx.room.Query
 import androidx.room.Update
 import com.example.session9_todo.database.model.Todo
-import java.util.Date
 
 @Dao
 interface TodoDao {

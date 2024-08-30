@@ -1,5 +1,6 @@
 package com.example.session9_todo
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -7,6 +8,7 @@ import android.os.Handler
 import android.os.Looper
 import com.example.session9_todo.home.HomeActivity
 
+@SuppressLint("CustomSplashScreen")
 class SplashActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -18,7 +20,7 @@ class SplashActivity : AppCompatActivity() {
     }
 
 
-    fun startHomeScreen(){
+    private fun startHomeScreen(){
         val intent = Intent(this, HomeActivity::class.java)
         startActivity(intent)
         finish()

@@ -21,8 +21,8 @@ abstract class MyDatabase : RoomDatabase(){
     //why static?
     //to access fun with class name without taking class object
     companion object{
-        var myDatabase : MyDatabase?=null
-        val database_Name = "Todo"
+        private var myDatabase : MyDatabase?=null
+        private const val DATABASE_NAME = "Todo"
 
         // singleton pattern
         //create object of MyDatabase class
@@ -30,7 +30,7 @@ abstract class MyDatabase : RoomDatabase(){
             // if database has no objects
             if (myDatabase == null){
                 //create object
-                myDatabase = Room.databaseBuilder(context,MyDatabase::class.java, database_Name)
+                myDatabase = Room.databaseBuilder(context,MyDatabase::class.java, DATABASE_NAME)
                     // delete old data and create the updated data with added data
                     .fallbackToDestructiveMigration()
                     .allowMainThreadQueries()
